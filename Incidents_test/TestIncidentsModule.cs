@@ -60,12 +60,12 @@ namespace Incidents_test
             }
             catch (Exception ex)
             {
-                Assert.IsTrue(true);
-                //Assert.IsTrue(ex.GetType() == typeof(System.Web.Http.HttpResponseException));
+                //Assert.IsTrue(true);
+                Assert.IsTrue(ex.GetType() == typeof(System.Web.Http.HttpResponseException));
 
-                //var exception = (System.Web.Http.HttpResponseException)ex;
+                var exception = (System.Web.Http.HttpResponseException)ex;
 
-                //Assert.IsTrue((int)exception.Response.StatusCode == 400 || (int)exception.Response.StatusCode == 409);
+                Assert.IsTrue((int)exception.Response.StatusCode == 400 || (int)exception.Response.StatusCode == 409);
             }
 
             try
